@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Homepage</title>
+    <style>
+        body {
+            font-style: DejaVu Sans;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4c4 ;
+            min-height: 100vh;
+        }
+        .logo{
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-bottom: -17px;
+        }
+        .container{
+            background-color: #ffe4c4 ;
+            max-height: 100px;   
+        }
+        .header {
+            background-color: #ffe4c4;  
+            color: #070707;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #fcf7f7;
+        }
+        .nav a {
+            color: #0b0b0b;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .nav a:hover {
+            background-color: #ffdab9;
+        }
+
+        .nav button:hover {
+            background-color: #ffdab9;
+        }
+        .main {
+            padding: 0px;
+            text-align: center;
+        }
+        .footer {
+            background-color: white;
+            color: #080105;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            width: 100%;
+            bottom: 10;
+            margin-top: 25px;
+
+        }
+
+        .content{
+          width: 150%;
+          height: 150%;
+          padding-bottom: 50px;
+        }
+       #outerbox {
+        width:290px;
+        overflow:hidden;
+        position: relative;
+        margin-top: 50px;
+       }
+       #sliderbox
+       {
+         position:relative;
+         width:8192px;
+         animation-name: slider;
+         animation-duration: 30s;
+         animation-iteration-count: infinite;
+       }
+       #sliderbox img{
+        width: 300px;
+        height: 400px;
+        float: left;
+        margin-right: 10px;
+        margin-top: 10px;
+       }
+      
+
+       @keyframes slider{
+        0%{
+            left:0px;
+        }
+        11%{
+            left:-310px;
+        }
+        22%{
+            left:-620px;
+        }
+        33%{
+            left:-930px;
+        }
+        44%{
+            left:-1240px;
+        }
+        55%{
+            left:-1550px;
+        }
+        66%{
+            left:-1850px;
+        }
+        77%{
+            left:-2170px;
+        }
+        88%{
+            left:-2485px;
+        }
+        100%{
+            left:-2800px;
+        }
+       } 
+       .carousel{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-height:100%;
+       }
+        body{
+            overflow:hidden;
+        }
+       
+        /* Open Login Button */
+.open-login {
+    position: relative;
+    z-index: 2;
+}
+
+.open-login button {
+    font-family: "cooper black", system-ui;
+    font-weight: 400;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 160px;
+}
+
+.form-container {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    position: fixed;
+    z-index: 3;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    color: inherit;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+p span {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+button.but {
+    background-color: #ffe4c4;
+    padding: 5px;
+}
+
+button.shrt {
+    width: 4%;
+}
+
+.carousel.str p {
+    
+    font-size: 30px;
+    font-weight: 400;
+}
+
+    </style>
+</head>
+<body>
+    
+   <div class="container">
+    <div class="all">
+
+      <center>  <img src="logofinal.jpg"class="logo">
+        <h1> Hair Care </h1></center>
+    </div>
+    <div class="nav">
+        <a href="homeNew.html">Home</a>
+        <a href="productNew.html">Product</a>
+        <a href="aboutNew.html">About</a>
+        <button class="shrt" onclick="showLogin()">Login</button>
+    </div>  
+
+<!-- Login Form -->
+<div class="form-container hidden" id="loginForm">
+    <div class="close-btn" onclick="closeForm()">&times;</div>
+    <h2>Login</h2>
+    <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <button type="submit" class="but">Login</button>
+        <p>Don't have an account? <span onclick="showRegister()">Register here!</span></p>
+    </form>
+</div>
+
+<!-- Registration Form -->
+<div class="form-container hidden" id="registerForm">
+    <div class="close-btn" onclick="closeForm()">&times;</div>
+    <h2>Register</h2>
+    <form>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" placeholder="Enter your first name" required>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" placeholder="Enter your last name" required>
+
+        <label for="birthdate">Birthdate</label>
+        <input type="date" id="birthdate" required>
+
+        <label for="regUsername">Username</label>
+        <input type="text" id="regUsername" placeholder="Choose a username" required>
+
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" placeholder="Create a password" required>
+
+        <button type="submit" class="but">Save</button>
+        <p>Already have an account? <span onclick="showLogin()">Log-in here!</span></p>
+    </form>
+</div>
+            <div class="carousel">
+                <div class="str">
+            <div id="outerbox">
+                <div id="sliderbox">
+                    <img src="condi1.png"/>
+                    <img src="shampoo1-removebg-preview.png"/>
+                    <img src="dry1-removebg-preview.png"/>
+                    <img src="oil1-removebg-preview.png"/>
+                    <img src="mask1-removebg-preview.png"/>
+                    <img src="condi1.png"/>
+                    <img src="shampoo1-removebg-preview.png"/>
+                    <img src="dry1-removebg-preview.png"/>
+                    <img src="oil1-removebg-preview.png"/>
+                    <img src="mask1-removebg-preview.png"/>
+                </div>
+                </div>
+            </div>
+    <div class="footer">
+        <p>&copy;2024 Hair Care Product|Your Everday Choice</p>
+        
+    </div>
+    <script src="formNew.js"></script>
+</body>
+</html>
