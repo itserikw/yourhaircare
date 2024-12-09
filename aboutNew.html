@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<style>
+    body{
+        font-family: "Arial,sans-serif";
+        margin: 0;
+        padding: 0;
+        color: #333;
+        scroll-behavior: smooth;
+    }
+    header{
+        background:rgb(176,176,176,1.00) ;
+        background-image:url(web.webp);
+        background-size: cover;
+        color:black;
+        text-align: center;
+        padding: 10px 20px 50px 0px;
+        position: relative;
+        overflow: hidden;
+    }
+    header .hero h1 span{
+        font-size: 40px;
+        color: #d10c05;
+    }
+    header .hero p{
+        font-size:23px;
+    }
+    header .btn{
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background:#d90c08;
+        color:black;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background 0.3s ease,transform 0.3s ease;
+    }
+    header .btn:hover{
+        
+        color:white;
+        transform: scale(1.1);
+    }
+
+    header .btn:hover{
+        background-color:black;
+    }
+    .btn{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+
+    .user-need{
+        display:flex;
+        justify-content:flex-start;
+        margin-left: 10px;
+    }
+    .user-need a{
+        text-decoration: underline black 2px;
+    }
+   
+    nav ul{
+        list-style: none;
+        margin: 0;
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        background: #000000;
+    }
+    nav ul li{
+        margin:0 45px;
+       
+        
+    }
+    nav ul li a{
+        color: rgb(255, 246, 246);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color o.3s ease;
+        font-size: 25px;
+    }
+    nav ul li a:hover{
+        color: #e71e0c;
+    }
+    .section{
+        padding: 50px 20px;
+        text-align: center;
+        background: #5a5656;
+        margin: 20px 0;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slidein 1s ease-in-out forwards;
+    }
+    .projects{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+    .projects h3{
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+    }
+    h2{
+        color: red;
+    }
+    p{
+        color: rgb(0, 0, 0);
+        font-size: 19px;
+    }
+    .project-card{
+        background: rgb(53, 49, 49);
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px  rgb(0,0,0,0.1);
+        transition: transform 0.9 ease,box-shadow 0.6s ease;
+        width: 300px;
+    }
+    .hero a{
+        color:white;
+    }
+   
+    .project-card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgb(0,0,0,0.2);
+    }
+    @keyframes fadein{
+        from{
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes slidein{
+        from{
+            opaity:0;
+            transform: translateY(30px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    footer{
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    @media(max-width:768px){
+        .projects{
+            flex-direction: column;
+            align-items: center;
+        }
+        .project-card{
+        width: 90%;
+    }
+    }
+    .section slide-in p{
+        font-size: 15px;
+    }
+</style>
+<body>
+    <header>
+
+        <div class="user-need">
+            <a href="homeNew.html"><p>Return</p></a>
+        </div>
+
+
+        <div class="hero">
+            <h1 class="fade-in">Hello,This site is <span>Hair Care</span></h1>
+            <p class="fade-in">A passionate Web Developer and Designer</p>
+            <a href="#about" class="btn">Discover More</a>
+        </div>
+    </header>
+    <nav>
+       <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+       </ul>
+    </nav>
+    <section id="about" class="section slide-in">
+        <h2>About me</h2> 
+        <p>I'm a developer dedicating to crafting beautiful,reponsive,and user-friendly website My expertise lies in HTML,CSS and JAVA SCRIPT,with a kenn interest in modern web technologies.</p>
+    </section>
+    <section id="projects" class="section slide-in">
+        <h2>My Website's Goals</h2>
+        <div class="projects">
+            <div class="project-card hover-grow">
+                <h3>MISSION</h3>
+                <p>To provide high-quality, affordable, and accessible haircare products that empower individuals to achieve healthy and beautiful hair.</p>
+            </div>
+            <div class="project-card hover-grow">
+                <h3>VISION</h3>
+                <p>To be the leading platform for hair supply, inspiring confidence and self-care through innovative and sustainable hair solutions.</p>
+            </div>
+            <div class="project-card hover-grow">
+                <h3>GOALS</h3>
+                <p>1.Offer a wide range of premium haircare products for all hair types.<br>
+                2.Ensure a seemless and user-friendly shopping experience.<br>
+                3.Deliver exceptional customer service and satisfaction.
+            </div> 
+        </div>
+    </section>
+    <section id="contact" class="section slide-in">
+        <h2>Contact Me</h2>
+        <p>Email:yourhaircare@gmail.com</p>
+        <p>Phone:+63 9002 121 003</p>
+    </section>
+    <footer>
+        <p>2024 WEBGARAGE.ALL Rights Reserved.</p>
+    </footer>
+</body>
+</html>
